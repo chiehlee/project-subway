@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "project-subway"
+version = "0.1.0"
+description = ""
+authors = ["Chieh Lee <chieh.lee@dotdata.com>"]
+readme = "README.md"
+packages = [{include = "project_subway"}]
+
+[tool.poetry.dependencies]
+python = ">=3.13,<3.14"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
