@@ -1,6 +1,6 @@
 python scripts/aggregate_transaction_from_pos.py data/from_pos/transactions
 mv ~/Downloads/G18_*.xlsx ./data/from_pos/transactions 
-python scripts/aggregate_transaction_from_pos.py data/from_pos/transactions --delete-raw
+poetry run python scripts/aggregate_transaction_from_pos.py data/from_pos/transactions --delete-raw
 
 cd /Users/chieh/Library/CloudStorage/Dropbox/subway/project-subway
 export CWA_API_KEY="CWA-4A3DCED3-6032-48F5-89A8-DC0A76F578DB"
@@ -9,6 +9,11 @@ export CWA_TOWN="北投區"
 export CWA_DAYS=20
 poetry run python scripts/fetch_weather_info.py
 
+
+# Scan Taiwan e-invoice paper (2 QR codes) via webcam, append to TSV
+# Prereq (macOS): brew install zbar
+poetry run python scripts/scan_invoice_qr.py --output data/invoices/invoices.csv
+poetry run python scripts/scan_invoice_qr.py --input-dir data/invoices/captures --output data/invoices/invoices.csv --debug-decode
 
 python - <<'PY'
 import csv
@@ -32,6 +37,6 @@ PY
 
 
 poetry run python scripts/generate_working_hours_gantt.py \
-  --csv data/working_hours/2025-12-googlesheet.csv \
-  --out data/working_hours/2025-12-gantt \
-  --year 2025
+  --csv data/working_hours/2026-01-googlesheet.csv \
+  --out data/working_hours/2026-01-gantt \
+  --year 2026
