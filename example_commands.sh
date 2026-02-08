@@ -37,6 +37,6 @@ PY
 
 
 poetry run python scripts/generate_working_hours_gantt.py \
-  --csv data/working_hours/2026-01-googlesheet.csv \
-  --out data/working_hours/2026-01-gantt \
+  --csv data/working_hours/2026-02-googlesheet.csv \
+  --out data/working_hours/2026-02-gantt \
   --year 2026

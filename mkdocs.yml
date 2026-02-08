@@ -1,0 +1,47 @@
+site_name: Project Subway
+site_description: Operational management application for Subway store operations
+site_author: Project Subway
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: green
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: green
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Product:
+      - Overview: 01-product/overview.md
+      - Features: 01-product/features.md
+      - Requirements: 01-product/requirements.md
+      - Planning: 01-product/planning.md
+  - Architecture:
+      - System Design: 02-architecture/system-design.md
+      - Data Model: 02-architecture/data-model.md

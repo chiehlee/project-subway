@@ -1,2 +1,5 @@
 .DS_Store
 utilities/__pycache__/
+
+# MkDocs
+site/
